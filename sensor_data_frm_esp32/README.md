@@ -1,5 +1,15 @@
 # ESP32 BMP180 Ubuntu System Tray Indicator
 
+## Hardware Requirements
+
+- **ESP-WROOM-32**(Microcontroller)
+- **BMP180**(Temperature , Altitude , Pressure Module)
+
+## Software Requirements
+
+- **Arduino IDE**(with "ESP32 Dev Model" as board  manager)
+- **Python3**
+
 ## Hardware Setup
 
 ### ESP32 + BMP180 Wiring:
