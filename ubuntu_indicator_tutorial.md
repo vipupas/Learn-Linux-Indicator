@@ -337,17 +337,20 @@ from gi.repository import Gtk, AppIndicator3
 
 class AdvancedIndicator:
     def __init__(self):
+        # Initialize state variables FIRST
+        self.feature_enabled = False
+        self.counter = 0
+        
+        # Create the indicator
         self.indicator = AppIndicator3.Indicator.new(
             "advanced-indicator",
             "applications-system",
             AppIndicator3.IndicatorCategory.APPLICATION_STATUS
         )
         self.indicator.set_status(AppIndicator3.IndicatorStatus.ACTIVE)
-        self.indicator.set_menu(self.create_menu())
         
-        # State variables
-        self.feature_enabled = False
-        self.counter = 0
+        # Now create the menu (after variables are initialized)
+        self.indicator.set_menu(self.create_menu())
     
     def create_menu(self):
         menu = Gtk.Menu()
